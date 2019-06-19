@@ -8,4 +8,9 @@ ServiceLoader是实现SPI一个重要的类。是jdk6里面引进的一个特性
 遇到Serviceloader.load(XxxInterface.class)时，会到META-INF/services的配置文件中寻找这个接口对应的实现类全路径名，
 然后使用反射去生成一个无参的实例。
 
+ServiceLoader还有一个特定的限制，就是我们提供的这些具体实现的类必须提供无参数的构造函数，否则ServiceLoader就会报错。
+
+
 [ServiceLoader使用及原理分析](https://blog.csdn.net/a910626/article/details/78811273)
+
+[ServiceLoader跟DriverManager使用总结](https://blog.csdn.net/liangyihuai/article/details/50716035)

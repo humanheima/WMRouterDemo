@@ -13,14 +13,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         btnUseServiceLoader.setOnClickListener {
 
-            val loader: ServiceLoader<ImageLoader> = ServiceLoader.load(ImageLoader::class.java)
-            //val loader: ServiceLoader<ImageLoader> = ServiceLoader.load(ImageLoader::class.java,this.classLoader)
-            //val loader: ServiceLoader<ImageLoader> = ServiceLoader.load(ImageLoader::class.java,ImageLoader::class.java.classLoader)
-            val it: Iterator<ImageLoader> = loader.iterator()
-            while (it.hasNext()) {
-                it.next().loadImg()
-            }
+            testServiceLoader()
         }
 
+    }
+
+    private fun testServiceLoader() {
+        /**
+         * 这三种方式都可以使用
+         */
+        val loader: ServiceLoader<ImageLoader> = ServiceLoader.load(ImageLoader::class.java)
+        //val loader: ServiceLoader<ImageLoader> = ServiceLoader.load(ImageLoader::class.java,this.classLoader)
+        //val loader: ServiceLoader<ImageLoader> = ServiceLoader.load(ImageLoader::class.java,ImageLoader::class.java.classLoader)
+        val it: Iterator<ImageLoader> = loader.iterator()
+        val builder = StringBuilder("加载的类：\n")
+        while (it.hasNext()) {
+            val next = it.next()
+            next.loadImg()
+            builder.append("${next.javaClass.canonicalName}\n")
+        }
+        tvLoadedService.text = builder.toString()
     }
 }
