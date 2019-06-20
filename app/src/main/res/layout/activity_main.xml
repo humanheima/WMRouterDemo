@@ -1,26 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnUseServiceLoader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="使用ServiceLoader"
-        android:textAllCaps="false"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".activity.MainActivity">
 
-    <TextView
-        android:id="@+id/tvLoadedService"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUseServiceLoader" />
+        <Button
+                android:id="@+id/btnUseServiceLoader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用ServiceLoader"
+                android:textAllCaps="false"/>
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+                android:id="@+id/btnWMRouterServiceLoader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用WMRouter ServiceLoader"
+                android:textAllCaps="false"/>
+
+        <TextView
+                android:id="@+id/tvLoadedService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        <Button
+                android:id="@+id/btnToAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跳转到AccountActivity"
+                android:textAllCaps="false"/>
+
+        <Button
+                android:id="@+id/btnRequestJump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="request跳转测试"
+                android:textAllCaps="false"/>
+
+        <Button
+                android:id="@+id/btnABTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABTest"
+                android:textAllCaps="false"/>
+
+        <Button
+                android:id="@+id/btnRouterRegex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用RouterRegex"
+                android:textAllCaps="false"/>
+
+        <Button
+                android:id="@+id/btnRouterPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用RouterPage"
+                android:textAllCaps="false"/>
+
+        <Button
+                android:id="@+id/btnInvokeMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="方法调用"
+                android:textAllCaps="false"/>
+
+        <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/btnDowngrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试全局降级策略"
+                android:textAllCaps="false"/>
+
+        <Button
+                android:id="@+id/btnLocalDowngrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试局部降级策略"
+                android:textAllCaps="false"/>
+
+        <Button
+                android:id="@+id/btnTestFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test fragment"
+                android:textAllCaps="false"/>
+
+
+    </LinearLayout>
+</ScrollView>
